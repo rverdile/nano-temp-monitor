@@ -1,10 +1,15 @@
-import matplotlib.pyplot as plt
+"""
+Continuously reads gpu and cpu temperatures at specified sampling rate. 
+
+On SIGINT singal, before exiting, writes to temp_data.csv as follows:
+
+[CPU temperature in celsius], [GPU temperature in celsius], [epoch time of read]
+"""
 import temperature as temp
 import time
 import signal
 import sys
 import csv
-
 
 SAMPLING_RATE = 1 # samples per second
 temp_vals = list()
@@ -36,7 +41,3 @@ while True:
     
     # Wait for next sample
     time.sleep(SAMPLING_RATE)
-    
-    
-    
-    
