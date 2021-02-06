@@ -1,7 +1,8 @@
 import subprocess
 
 """
-Works with Python 3.6, not necessarily with other versions of Python
+Works with Python 3.6, not necessarily with other versions of Python due
+to compatbility with the subprocess library
 
 thermal zones defined in NVIDIA documentation
 use "cat /sys/class/thermal/thermal_zone*/type" to see which number to use (0-5)
