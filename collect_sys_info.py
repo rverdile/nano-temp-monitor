@@ -28,7 +28,7 @@ def signal_handler(signal,frame):
         'timestamp':sys_info[:,4],
     })
     
-    df.to_csv('sys_info.csv',mode='a')
+    df.to_csv('sys_info.csv',mode='w')
            
     sys.exit(0)
 
