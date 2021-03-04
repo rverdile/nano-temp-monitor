@@ -4,18 +4,18 @@ import pandas as pd
 sys_info = pd.read_csv('sys_info.csv') 
 
 TEMP_AX_MIN = 0
-TEMP_AX_MAX = 60
+TEMP_AX_MAX = 70
 PWR_AX_MIN = 0
 PWR_AX_MAX = 10
 
-CPU_PWR_TEXT_X = 0.15
+CPU_PWR_TEXT_X = 0.17
 CPU_PWR_TEXT_Y = 0.98
-CPU_TEMP_TEXT_X = 0.15
+CPU_TEMP_TEXT_X = 0.17
 CPU_TEMP_TEXT_Y = 0.98
 
-GPU_PWR_TEXT_X = 0.15
+GPU_PWR_TEXT_X = 0.17
 GPU_PWR_TEXT_Y = 0.98
-GPU_TEMP_TEXT_X = 0.15
+GPU_TEMP_TEXT_X = 0.17
 GPU_TEMP_TEXT_Y = 0.98
 
 TITLE_TEXT_SIZE = 30
@@ -58,7 +58,7 @@ color = 'tab:blue'
 ax[0].set_xlabel('Time (min)',fontsize=OTHER_TEXT_SIZE)
 ax[0].set_ylabel('Temperature (C)', color=color,fontsize=OTHER_TEXT_SIZE)
 ax[0].set_ylim([TEMP_AX_MIN,TEMP_AX_MAX])
-ax[0].plot(t, sys_info.cpu_temp, color=color) # plot CPU temp
+ax[0].scatter(t, sys_info.cpu_temp, color=color) # plot CPU temp
 ax[0].tick_params(axis='y', labelcolor=color)
 
 # ======= Power ======= #
@@ -67,7 +67,7 @@ color = 'tab:red'
 ax[1].set_xlabel('Time (min)',fontsize=OTHER_TEXT_SIZE)
 ax[1].set_ylabel('Power Consumption (W)', color=color,fontsize=OTHER_TEXT_SIZE)
 ax[1].set_ylim([PWR_AX_MIN,PWR_AX_MAX])
-ax[1].plot(t, sys_info.cpu_pwr, color=color) # plot CPU temp
+ax[1].scatter(t, sys_info.cpu_pwr, color=color) # plot CPU temp
 ax[1].tick_params(axis='y', labelcolor=color)
 
 fig.tight_layout()
@@ -109,7 +109,7 @@ color = 'tab:blue'
 ax[0].set_xlabel('Time (min)',fontsize=OTHER_TEXT_SIZE)
 ax[0].set_ylabel('Temperature (C)', color=color,fontsize=OTHER_TEXT_SIZE)
 ax[0].set_ylim([TEMP_AX_MIN,TEMP_AX_MAX])
-ax[0].plot(t, sys_info.gpu_temp, color=color) # plot GPU temp
+ax[0].scatter(t, sys_info.gpu_temp, color=color) # plot GPU temp
 ax[0].tick_params(axis='y', labelcolor=color)
 
 # ======= Power ======= #
@@ -118,7 +118,7 @@ color = 'tab:red'
 ax[1].set_xlabel('Time (min)',fontsize=OTHER_TEXT_SIZE)
 ax[1].set_ylabel('Power Consumption (W)', color=color,fontsize=OTHER_TEXT_SIZE)
 ax[1].set_ylim([PWR_AX_MIN,PWR_AX_MAX])
-ax[1].plot(t, sys_info.gpu_pwr, color=color) # plot CPU temp
+ax[1].scatter(t, sys_info.gpu_pwr, color=color) # plot CPU temp
 ax[1].tick_params(axis='y', labelcolor=color)
 
 fig.tight_layout()  # otherwise the right y-label is slightly clipped
