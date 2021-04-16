@@ -14,7 +14,7 @@ import pandas as pd
 import numpy as np
 
 SAMPLING_RATE = 1 # samples per second
-sys_info = np.ones((0,1))
+sys_info = np.ones((0,2))
 
 def signal_handler(signal,frame):
     
